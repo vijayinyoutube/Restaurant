@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'info.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
       home: MyPage(),
     );
   }
@@ -29,29 +36,40 @@ class _MyPageState extends State<MyPage> {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[
-            FittedBox(
-              child: Card(
-                // color: Colors.red,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 5,
-                child: Row(
-                  children: <Widget>[
-                    itemcake(),
-                    Container(
-                      width: 90,
-                      height: 100,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15.0),
-                        child: Image(
-                          fit: BoxFit.cover,
-                          alignment: Alignment.topRight,
-                          image: AssetImage('assets/cake.jpg'),
-                        ),
-                      ),
+            Hero(
+              tag: "cakeitem",
+              child: FittedBox(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => InfoPage()),
+                    );
+                  },
+                  child: Card(
+                    // color: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
                     ),
-                  ],
+                    elevation: 5,
+                    child: Row(
+                      children: <Widget>[
+                        itemcake(),
+                        Container(
+                          width: 90,
+                          height: 100,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: Image(
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topRight,
+                              image: AssetImage('assets/cake.jpg'),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -522,7 +540,7 @@ class _MyPageState extends State<MyPage> {
                 fontWeight: FontWeight.normal,
                 fontSize: 9.5,
                 color: Colors.grey),
-          ),  
+          ),
           SizedBox(
             height: 5,
           ),
@@ -561,7 +579,10 @@ class _MyPageState extends State<MyPage> {
                 alignment: Alignment.center,
                 child: Text(
                   "Hot",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.5,color: Colors.white),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 9.5,
+                      color: Colors.white),
                 ),
               ),
               SizedBox(
@@ -577,7 +598,10 @@ class _MyPageState extends State<MyPage> {
                 alignment: Alignment.center,
                 child: Text(
                   "New",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.5,),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 9.5,
+                  ),
                 ),
               ),
             ],
