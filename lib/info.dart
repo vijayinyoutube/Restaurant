@@ -14,10 +14,8 @@ class _InforPageState extends State<InfoPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-         
           children: <Widget>[
             Stack(
-             
               children: <Widget>[
                 ClipPath(
                   clipper: MyClipper(),
@@ -64,8 +62,9 @@ class _InforPageState extends State<InfoPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 95, top: 200),
-                 
+                  padding: EdgeInsets.only(
+                      left: ((MediaQuery.of(context).size.width - 175) / 2),
+                      top: (MediaQuery.of(context).size.height+175) / 5),
                   child: Hero(
                     tag: "cakeitem",
                     child: ClipOval(
@@ -207,9 +206,9 @@ class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
-    path.lineTo(0, size.height - 35);
+    path.lineTo(0, size.height / 1.3);
     path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 35);
+        size.width / 2, size.height, size.width, size.height /1.3);
     path.lineTo(size.width, 0);
     path.close();
     return path;
