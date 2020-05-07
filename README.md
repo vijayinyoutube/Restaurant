@@ -3,6 +3,11 @@
 
 This app allow virtual ordering of food items, Users can select their favourite food and their quantity needed, corresponding amount will be displayed to the user thereby user can proceed to place an order or cancel it accordingly.
 
+Check out the video tutorial 
+>Part-1 https://youtu.be/3W9N_Chs71s
+
+>Part-2 https://youtu.be/JX1zTkURlTo
+
 ## Light Mode
 <image src="https://user-images.githubusercontent.com/58719230/80373854-53857480-88b3-11ea-9995-1b1e599ff94e.png" width="300" height="450">  <image src="https://user-images.githubusercontent.com/58719230/80793241-394dde00-8bb4-11ea-8f85-947ae83cef2e.png" width="300" height="450"> 
 
