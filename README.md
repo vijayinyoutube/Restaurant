@@ -1,6 +1,8 @@
 # Restaurant
 ### Sample Restaurant app using Flutter
 
+<img src="https://user-images.githubusercontent.com/58719230/93021627-3bfc1d80-f601-11ea-8019-37ae5250b2fe.png">
+
 This app allow virtual ordering of food items, Users can select their favourite food and their quantity needed, corresponding amount will be displayed to the user thereby user can proceed to place an order or cancel it accordingly.
 
 Check out the video tutorial 
